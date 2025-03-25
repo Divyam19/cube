@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Project</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="top-banner">
+            GET 25% OFF YOUR FIRST MONTH. FREE SHIPPING ON U.S ORDERS
+        </div>
+        <div class="logo">
+            <img src="/assets/logo.png" alt="Logo">
+        </div>
+        <div class="nav-menu">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <a href="#">Shop ▾</a>
+                <div class="dropdown-content">
+                    <a href="#">Category 1</a>
+                    <a href="#">Category 2</a>
+                    <a href="#">Category 3</a>
+                </div>
+            </div>
+            <a href="#">Elements</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="right-section">
+            <img src="/assets/search.png" alt="Search" class="search-icon">
+            <button class="try-button">
+                Try Alcami
+                <img src="/assets/right-arrow.png" alt="Arrow">
+            </button>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search for products">
+        </div>
+    </nav>
+    <script src="/script.js"></script>
+
+    <!-- slide 1  -->
+    <!-- Main container with left and right sections -->
+        <div class="main-container">
+            <div class="left-section">
+                <div class="rating-wrapper">
+                    <div class="rating-container">
+                        <button class="rating-pill">
+                            <div class="rating-inner">
+                                <img src="/assets/star.png" alt="Star" class="star-icon">
+                                <span>4.8 star rating</span>
+                            </div>
+                            <span class="award-text">awarded the top adaptogen blend in the world</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-title">
+                    Achieve your highest self.
+                </div>
+                <div class="stats">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">10x</div>
+                            <div class="stat-label">concentration</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">9</div>
+                            <div class="stat-label">powerful ingredients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000<span class="unit">mg</span></div>
+                            <div class="stat-label">of adaptogens</div>
+                        </div>
+                    </div>
+                    <div class="shop-button">
+                        <button class="try-button">
+                            Shop now
+                            <img src="/assets/right-arrow.png" alt="Arrow">
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="right-section-content">
+                <img src="/assets/bags/bags.png" alt="Hero Image">
+            </div>
+            
+        </div>
+        
+        <!-- Bottom section -->
+        <div class="bottom-section">
+            <p class="quote">         Incredible Taste And Effects You Can Feel         </p>
+        </div>
+
+
+        <!-- Second section -->
+        <div class="box">
+            <div class="left-box">
+                <div class="right-section-content">
+                    <img src="/assets/bags/bags2.png" alt="Hero Image" class="iimg">
+                </div>    
+            </div>
+            <div class="right-box">
+                <div class="right-box-content">
+                    <p class="elements">9 POWERFUL ELEMENTS</p>
+                    <p class="ing">All of the Best Ingredients, None of the Compromise</p>
+                    <p class="bng">Alcami uses <b>x10 potency</b> every serving formulated for maximum absorption to ensure your body gets the most out of every scoop.</p>
+                    <button class="try-button">
+                        View full Ingredients         
+                        <img src="/assets/right-arrow.png" alt="Arrow">
+                    </button>
+                </div>
+            </div>   
+        </div>
+
+        <!-- Gaurantee section -->
+        <div>
+            <span class="jj">
+                <div class="line">
+                    <div class="elements">Our Gaurentee</div>
+                    <div class="card">
+                        <img src="/assets/signs/heart.png" alt="heart" class="signs">
+                        <div >
+                            <div>30-day gaurentee</div>
+                            <div>Love Alcami or send it back</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/signs/earth.png" alt="earth" class="signs">
+                        <div >
+                            <div>Worldwide shipping</div>
+                            <div>Alcami ships everywhere</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/signs/box.png" alt="box" class="signs">
+                        <div>
+                            <div>Fast Delivery</div>
+                            <div>On time quick shipping</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/signs/leaves.png" alt="leaves" class="signs">
+                        <div>
+                            <div>Eco Certified</div>
+                            <div>Carbon neutral eco packaging</div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <!-- company section  -->
+        <div class="companies">
+            <div class="seen">AS SEEN IN</div>
+            <div class="co-list">
+                <img src="/assets/companies/fastCompany.png" alt="fast" class="company">
+                <img src="/assets/companies/forbes.png" alt="forbes" class="company">
+                <img src="/assets/companies/goop.png" alt="goop" class="company">
+                <img src="/assets/companies/time.png" alt="time" class="company">
+                <img src="/assets/companies/nyt.png" alt="nyt" class="company">
+            </div>
+        </div>
+
+        <!-- product section ; -->
+        <div class="flexbox">
+            <!-- product photo section -->
+            <div class="left-flex">
+                <div>
+                    <img src="/assets/photos/1.png" alt="bags" class="timg">
+                    <img src="/assets/photos/1slider.png" alt="bags" class="kk">
+                </div>
+            </div>
+            
+            <!-- product details section -->
+            <div class="right-flex">
+                <div class="content">
+                <div>
+                    Alcami Elements
+                </div>
+                <div>
+                    <img src="/assets/photos/4star.png" alt="stars" class="stars"> 4.7 (999+ reviews)
+                </div>
+                <p>Discover the ancient wisdom supported by modern science, all within the synergy of Alcami Elements. Designed for those who aspire to elevate every facet of life with awareness and intention.</p>
+                <br/>
+                <p class = "choose">Choose a flavor</p>
+                <div class="flavor-cards">
+                    <div class="flavor-option">
+                        <div>
+                            <input type="radio" id="original" name="flavor" value="original">
+                            <label for="original">Original</label>
+                        </div>
+                        <img src="/assets/bags/white.png" alt="bags" class="timg">
+                    </div>
+                    <div class="flavor-option">
+                        <div>
+                        <input type="radio" id="matcha" name="flavor" value="Matcha">
+                        <label for="matcha">Matcha</label>
+                    </div>
+                    <img src="/assets/bags/green.png" alt="bags" class="timg">
+                    </div>
+                    
+                    <div class="flavor-option">
+                        <div>
+                        <input type="radio" id="cocoa" name="flavor" value="cocoa">
+                        <label for="cocoa">Cocoa</label>
+                        </div>
+                        <img src="/assets/bags/cocoa.png" alt="bags" class="timg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
