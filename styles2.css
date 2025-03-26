@@ -652,3 +652,69 @@ html, body {
     margin-right: auto;
     margin-top: 30px;
 }
+
+.mug-text{
+    position: absolute; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white; 
+    
+    text-align: center;
+}
+
+.mug-firsttext{
+    font-size: 50px; 
+    font-weight: 300; 
+}
+.mug-subtext{
+    margin-top: 50px;
+    font-size: 20px; 
+    font-weight: 300; 
+}
+
+.glow-input {
+    width: 70%;  /* Reduced size */
+    height: 40px; /* Reduced height */
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    margin-top: 60px; /* Increased value to move it further down */
+    transition: box-shadow 0.3s ease-in-out;
+    /* border-radius: 12px; Adjust this value for more/less rounding */
+}
+
+.glow-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.glow-input:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.white-btn{
+    padding: 12px 32px;
+    border-radius: 24px;
+    background: rgb(255, 255, 255);
+    color: #828080;
+    border: none;
+    cursor: pointer;
+    font-family: 'NewRailAlphabet', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px ; /* Ensures horizontal centering */
+}
+
+.white-btn img {
+    height: 14px;
+    width: 14px;
+}

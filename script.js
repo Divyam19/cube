@@ -334,3 +334,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+function subscribe() {
+  let inputField = document.getElementById("emailInput");
+  let email = inputField.value.trim();
+
+  if (email === "") {
+      alert("Please enter a valid email!");
+      return;
+  }
+
+  inputField.value = ""; // Clear input
+  alert("Email registered!");
+}
