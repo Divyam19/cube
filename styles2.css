@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
+/* Replace Google Fonts with local fonts */
+@font-face {
+    font-family: 'NewRailAlphabet';
+    src: url('assets/fonts/NewRailAlphabet-Light (1).otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    
+    font-family: 'NewRailAlphabet';
+    src: url('assets/fonts/NewRailAlphabet-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NewRailAlphabet';
+    src: url('assets/fonts/NewRailAlphabet-White.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #F5F5F5;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
 }
 
 /* Update specific elements that had Arial font */
@@ -18,7 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     font-size: 14px;
 }
 
@@ -50,7 +73,7 @@ body {
 .nav-menu a {
     color: #322D2D;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     font-size: 16px;
     cursor: pointer;
 }
@@ -118,9 +141,9 @@ body {
     color: #322D2D;
     border: none;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -169,7 +192,7 @@ body {
     background-color: #f5f5f5;
     padding: 0 24px;
     font-size: 15px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     color: #322D2D;
 }
 
@@ -410,7 +433,7 @@ h3 {
     position: absolute;
     left: 0;
     color: #CAA648;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .add-to-cart {
@@ -500,9 +523,9 @@ h3 {
     color: #322D2D;
     border: none;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -544,11 +567,11 @@ h3 {
 
 .rit-left p:first-child {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.2;
     color: #322D2D;
     margin-bottom: 24px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     letter-spacing: -0.5px;
 }
 
@@ -557,7 +580,7 @@ h3 {
     line-height: 1.6;
     color: #666666;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'NewRailAlphabet', sans-serif;
     letter-spacing: -0.2px;
 }
 
@@ -580,4 +603,101 @@ h3 {
     .rit-left p:last-child {
         font-size: 16px;
     }
+}
+
+.number{
+    font-size: 85px;
+    font-weight: 400;
+    color: #a4a4a4;
+    margin-right: 50px;
+}
+.sub_text{
+    font-size: 15px;
+    font-weight: 200;
+    color: #848383;
+    margin-right: 50px;
+
+}
+.win{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.header {
+    background: linear-gradient(to right, 
+        #705d2d,
+        #a58936,
+        #E4C267,
+        #E2C065,
+        #DBB95E,
+        #D0AE52,
+        #C09F41,
+        #BB9A3C
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.rit-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-left: 64px;
+    margin-left:30px;
+}
+
+.rit-right .win {
+    width: 100%;
+    justify-content: center;
+}
+
+.rit-right .header {
+    text-align: center;
+    width: 100%;
+}
+
+.mushroom-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.mushrooms {
+    width: 100vw;
+    height: 201.25px;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    filter: brightness(0.85);
+}
+
+
+.perc {
+    position: absolute;
+    top: 50%;  /* Adjust for vertical placement */
+    left: 50%; /* Adjust for horizontal placement */
+    transform: translate(-50%, -50%); /* Centering */
+     /* Optional background */
+    color: white; /* Text color */
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
 }

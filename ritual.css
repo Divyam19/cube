@@ -12,7 +12,7 @@
 
 .rit-left p:first-child {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
     color: #322D2D;
     margin-bottom: 24px;
@@ -49,3 +49,4 @@
         font-size: 16px;
     }
 }
+
