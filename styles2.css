@@ -747,7 +747,7 @@ footer {
 .footer-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 64px;
+    gap: 80px;
     color: #FFFFFF;
 }
 
@@ -797,17 +797,15 @@ footer {
 }
 
 .normal-input {
-    width: 600px;  /* Reduced size */
-    height: 40px; /* Reduced height */
+    width: 600px; /* Increased width */
+    height: 40px;
     background: transparent;
     border: 2px solid white;
     color: white;
     font-size: 16px;
     outline: none;
     text-align: center;
-     /* Increased value to move it further down */
     transition: box-shadow 0.3s ease-in-out;
-    /* border-radius: 12px; Adjust this value for more/less rounding */
 }
 
 .email-btn{
@@ -834,6 +832,7 @@ footer {
     flex-direction: row;
     gap: 15px;
     margin-left:auto;
+    margin-top: 40px;
 }
 
 .policy {
