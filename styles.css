@@ -864,3 +864,21 @@
     font-weight: 400;
     margin-bottom: 8px;
 }
+.review-container {
+    position: relative;
+}
+
+.test-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.review {
+    position: relative;
+    z-index: 2;
+    /* Maintain your existing review styles */
+}
