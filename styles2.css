@@ -162,6 +162,13 @@ body {
 
 /* Add at the beginning of the file, after the font imports */
 html, body {
+    background: linear-gradient(
+        to haha,
+        #e1dede 0%,
+        #bab7b7 calc(100vh + 200px), /* Grey background until quote section */
+        #777575 calc(100vh + 200px),  /* Transition to white */
+        #3f3f3f 100%
+    );
     max-width: 100%;
     overflow-x: hidden;
     margin: 0;
@@ -835,6 +842,8 @@ footer {
     margin-top: 40px;
 }
 
+
+
 .policy {
     color: white;
     margin-top: 20px;
@@ -896,4 +905,20 @@ footer {
 
 .email-btn:active {
     transform: translateY(0);
+}
+
+.leline{
+    display: flex;
+    flex-direction: row;
+}
+
+.qq{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
