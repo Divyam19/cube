@@ -718,3 +718,183 @@ html, body {
     height: 14px;
     width: 14px;
 }
+
+footer {
+    background-color: #322D2D;
+    padding: 64px;
+    margin-top: 130px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin-left: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.footer-left img {
+    
+    
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+    color: #FFFFFF;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-column div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.footer-column div:hover {
+    opacity: 1;
+}
+
+.social {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.copyright {
+    color:#DEA453;
+    opacity: 0.6;
+    margin-top: 48px;
+    font-size: 14px;
+    margin-left: 64px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.footer-right p{
+    color: #BB9A3C;
+    font-weight: 600;
+    font-size: 18px;
+  
+}
+
+.normal-input {
+    width: 600px;  /* Reduced size */
+    height: 40px; /* Reduced height */
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+     /* Increased value to move it further down */
+    transition: box-shadow 0.3s ease-in-out;
+    /* border-radius: 12px; Adjust this value for more/less rounding */
+}
+
+.email-btn{
+
+    background: rgb(255, 255, 255);
+    color:#BB9A3C;
+    padding-top :10px ;
+    padding-bottom :10px ;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.subi{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-left:auto;
+}
+
+.policy {
+    color: white;
+    margin-top: 20px;
+}
+
+.policy a {
+    color: white;
+    text-decoration: underline;
+}
+
+.policy a:hover {
+    color: white;
+}
+
+.mm{
+    margin-left: 400px;
+}
+
+/* General button hover effects */
+.try-button, .try-shil, .try-faq, .white-btn, .email-btn {
+    transition: all 0.3s ease;
+}
+
+.try-button:hover, .try-shil:hover {
+    background-color: #C09F41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.try-button:active, .try-shil:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.try-faq:hover {
+    color: #BB9A3C;
+    transform: translateY(-2px);
+}
+
+.try-faq:active {
+    transform: translateY(0);
+}
+
+.white-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.white-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.email-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.email-btn:active {
+    transform: translateY(0);
+}

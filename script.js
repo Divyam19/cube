@@ -347,3 +347,16 @@ function subscribe() {
   inputField.value = ""; // Clear input
   alert("Email registered!");
 }
+
+function subscribe2() {
+  let inputField = document.getElementById("emailInput2");
+  let email = inputField.value.trim();
+
+  if (email === "") {
+      alert("Please enter a valid email!");
+      return;
+  }
+
+  inputField.value = ""; // Clear input
+  alert("Email registered!");
+}
