@@ -685,19 +685,42 @@ h3 {
     margin: 0;
     padding: 0;
     max-width: none;
-    filter: brightness(0.85);
+    filter: brightness(0.5);
 }
 
 
 .perc {
     position: absolute;
-    top: 50%;  /* Adjust for vertical placement */
-    left: 50%; /* Adjust for horizontal placement */
-    transform: translate(-50%, -50%); /* Centering */
-     /* Optional background */
-    color: white; /* Text color */
-    padding: 5px 10px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    display: flex;
+    gap: 32px;
+    width: 90%;
+    max-width: 1400px;
+    justify-content: space-between;
+}
+
+.data {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.moving-number {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left;
+    font: system-ui;
+}
+
+.moving-data {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: 0.9;
+    text-align: left;
+    max-width: 280px;
 }

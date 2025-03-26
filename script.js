@@ -30,3 +30,39 @@ document.addEventListener('click', function() {
         rightSection.classList.remove('search-active');
     }
 });
+
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Intersection Observer to trigger animation when element is in view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const element = entry.target;
+            const targetValue = parseInt(element.getAttribute('data-target'));
+            
+            // Only animate if not already animated
+            if (!element.classList.contains('animated')) {
+                animateValue(element, 0, targetValue, 2000);
+                element.classList.add('animated');
+            }
+        }
+    });
+}, {
+    threshold: 0.1 // Trigger when at least 10% of the element is visible
+});
+
+// Observe all moving-number elements
+document.querySelectorAll('.moving-number').forEach(element => {
+    observer.observe(element);
+});
