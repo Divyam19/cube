@@ -62,7 +62,12 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1 // Trigger when at least 10% of the element is visible
 });
 
-// Observe all moving-number elements
-document.querySelectorAll('.moving-number').forEach(element => {
-    observer.observe(element);
+// Ensure DOM is fully loaded before observing elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Observe all moving-number elements
+    document.querySelectorAll('.moving-number').forEach(element => {
+        observer.observe(element);
+    });
+    
+    console.log('Moving number observers initialized');
 });
