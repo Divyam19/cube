@@ -113,3 +113,26 @@
 .carousel-container {
     position: relative;
 }
+
+.page1 {
+    display: flex;
+    /* gap: 4px; Reduced from 8px */
+    margin-top: 20px;
+    padding-right: 63px;
+    margin-left: 64px;
+}
+
+.page1 .gimg {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.page1 .gimg:hover,
+.page1 .gimg.active {
+    transform: scale(1.1);
+    /* opacity: 1; */
+    /* border: 2px solid #BB9A3C; */
+}

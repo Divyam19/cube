@@ -134,8 +134,65 @@ function subscribe2() {
   alert("Email registered!");
 }
 
-// https://colorlib.com/preview/theme/seogo/
+// Image slider functionality
+const productImages = [
+    '/assets/photos/1.png',
+    '/assets/photos/2_1_11zon.png',
+    '/assets/photos/3_2_11zon.png',
+    '/assets/photos/4_3_11zon.png',
+    '/assets/photos/5_4_11zon.png',
+    '/assets/photos/7_5_11zon.png',
+    '/assets/photos/8_6_11zon.png',
+    '/assets/photos/9_7_11zon.png',
+];
 
+let currentImageIndex = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productImage = document.querySelector('.timg-container .timg');
+    const prevButton = document.querySelector('.timg-container .slider-nav.prev');
+    const nextButton = document.querySelector('.timg-container .slider-nav.next');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    if (productImage && prevButton && nextButton && dotsContainer) {
+        // Create pagination dots
+        productImages.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateImage();
+                updateDots();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateImage() {
+            productImage.src = productImages[currentImageIndex];
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + productImages.length) % productImages.length;
+            updateImage();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % productImages.length;
+            updateImage();
+        });
+    }
+});
+
+// Original map slider code
 const buttonsWrapper = document.querySelector(".map");
 const slides = document.querySelector(".inner");
 
