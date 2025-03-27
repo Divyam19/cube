@@ -213,3 +213,45 @@ buttonsWrapper.addEventListener("click", e => {
     }
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const flavorOptions = document.querySelectorAll('input[name="flavor"]');
+    const subscriptionOptions = document.querySelectorAll('input[name="subscription"]');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const urlTooltip = document.getElementById('urlTooltip');
+
+    function generateCartUrl() {
+        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+        const selectedSubscription = document.querySelector('input[name="subscription"]:checked');
+
+        if (selectedFlavor && selectedSubscription) {
+            const flavor = selectedFlavor.value;
+            const subscription = selectedSubscription.value;
+
+            // Generate URL based on selected options
+            const baseUrl = 'https://alcami.com/cart';
+            const urlParams = new URLSearchParams({
+                flavor: flavor,
+                type: subscription
+            });
+
+            const cartUrl = `${baseUrl}?${urlParams.toString()}`;
+            
+            addToCartBtn.onclick = function() {
+                window.location.href = cartUrl;
+            };
+
+            // Update tooltip with the generated URL
+            urlTooltip.textContent = cartUrl;
+
+            // Optional: Update button text to show selected options
+            addToCartBtn.childNodes[0].textContent = `Add ${flavor} (${subscription}) to Cart →`;
+        }
+    }
+
+    // Add event listeners to both flavor and subscription options
+    [...flavorOptions, ...subscriptionOptions].forEach(option => {
+        option.addEventListener('change', generateCartUrl);
+    });
+});

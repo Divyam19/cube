@@ -21,23 +21,25 @@
         <div class="top-banner">
             GET 25% OFF YOUR FIRST MONTH. FREE SHIPPING ON U.S ORDERS
         </div>
+        <a href="#">
         <div class="logo">
             <img src="/assets/logo.png" alt="Logo">
         </div>
+    </a>
         <img src="/assets/hamburger.png" class="hamburger" />
 
         <div class="nav-menu">
-            <a href="#">Home</a>
+            <a href="#main-container">Home</a>
             <div class="dropdown">
-                <a href="#">Shop ▾</a>
+                <a href="#flexbox">Shop ▾</a>
                 <div class="dropdown-content">
                     
                 </div>
             </div>
-            <a href="#">Elements</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
+            <a href="#box">Elements</a>
+            <a href="#founder">About Us</a>
+            <a href="#shil">Blog</a>
+            <a href="#mug">Contact</a>
         </div>
         <div class="right-section">
             <img src="/assets/search.png" alt="Search" class="search-icon">
@@ -60,7 +62,7 @@
 
     <!-- slide 1  -->
     <!-- Main container with left and right sections -->
-        <div class="main-container">
+        <div class="main-container" id="main-container">
             <div class="left-section">
                 <div class="rating-wrapper">
                     <div class="rating-container">
@@ -114,7 +116,7 @@
 
 
         <!-- Second section -->
-        <div class="box">
+        <div class="box" id="box">
             <div class="left-box">
                 <div class="right-section-content">
                     <img src="/assets/bags/bags2.png" alt="Hero Image" class="iimg">
@@ -183,7 +185,7 @@
         </div>
 
         <!-- product section ; -->
-        <div class="flexbox">
+        <div class="flexbox" id="flexbox">
             <!-- product photo section -->
             <div class="left-flex">
                 <div>
@@ -317,7 +319,10 @@
                             </div>
                         </label>
                     </div>
-                    <button class="add-to-cart">Add to Cart →</button>
+                    <button class="add-to-cart" id="addToCartBtn">
+                        Add to Cart →
+                        <span class="url-tooltip" id="urlTooltip"></span>
+                    </button>
                 </div>
             </div>
 
@@ -344,7 +349,7 @@
 
     <!-- shilajit section  -->
     
-    <div class="shilajit">
+    <div class="shilajit" id="shil">
         <div>
             Himalayan Shilajit
         </div>
@@ -518,7 +523,7 @@
     </div>
 
     <div>
-        <img src="/assets/video-cards/2.png " alt="founder" class="founder-image">
+        <img src="/assets/video-cards/2.png " alt="founder" id="founder" class="founder-image">
     </div>
     <div class="founder-text">
         <!-- left part -->
@@ -663,7 +668,7 @@
 
 
      <!-- give email section -->
-     <div style="position: relative; display: inline-block; width: calc(100% - 128px); margin: 0 64px;">
+     <div style="position: relative; display: inline-block; width: calc(100% - 128px); margin: 0 64px;" id="mug">
         <img src="/assets/cogffee-mug.png" 
              alt="coffee" 
              class="coffee-mug" 
@@ -695,28 +700,28 @@
             <div class="footer-links">
                 
                 <div class="footer-column">
-                    <div>Home</div>
-                    <div>Shop</div>
-                    <div>Elements</div>
+                    <a href="#">Home</a>
+                    <a href="#founder">Shop</a>
+                    <a href="#box">Elements</a>
                 </div>
                 <div class="footer-column">
-                    <div>About Us</div>
-                    <div>Blog</div>
-                    <div>Contact</div>
+                    <a href="#founder">About Us</a>
+                    <a href="#shil">Blog</a>
+                    <a href="#mug">Contact</a>
                 </div>
                 <div class="footer-column">
-                    <div>
+                    <a href="https://www.facebook.com/AlcamiElements">
                         <img src="/assets/social/fb.png" alt="Facebook" class="social">
                         <span>Facebook</span>
-                    </div>
-                    <div>
+                    </a>
+                    <a href="https://www.instagram.com/alcamielements/">
                         <img src="/assets/social/insta.png" alt="Instagram" class="social">
                         <span>Instagram</span>
-                    </div>
-                    <div>
+                    </a>
+                    <a href="https://x.com/?lang=en">
                         <img src="/assets/social/x.png" alt="Twitter" class="social">
                         <span>X</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
