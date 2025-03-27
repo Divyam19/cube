@@ -37,7 +37,30 @@
     margin-top: 80px;
 }
 
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
 
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(96, 94, 94, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgb(103, 99, 99);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
 
 .cardd > .contentt > h1 {
     color:#0a2640;
