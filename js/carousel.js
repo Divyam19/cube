@@ -7,14 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardsPerSlide = 3;
     const totalSlides = Math.ceil(cards.length / cardsPerSlide);
 
-    // Set initial width for wrapper and inner container
-    wrapper.style.width = `${cardsPerSlide * 18.5}em`; // Adjusted for card width + gap
-    inner.style.width = `${cards.length * 18.5}em`;
+    // Clone the first few cards for smooth looping
+    const cloneCards = [...cards].slice(0, cardsPerSlide).map(card => card.cloneNode(true));
+    cloneCards.forEach(card => inner.appendChild(card));
 
-    // Clear existing dots (if any)
-    map.innerHTML = '';
+    // Adjust container widths
+    wrapper.style.width = `${cardsPerSlide * 18.5}em`;
+    inner.style.width = `${(cards.length + cloneCards.length) * 18.5}em`;
 
     // Create navigation dots
+    map.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
         const button = document.createElement('button');
         button.addEventListener('click', () => goToSlide(i));
@@ -22,33 +24,29 @@ document.addEventListener('DOMContentLoaded', function () {
         map.appendChild(button);
     }
 
-    function goToSlide(index) {
+    function goToSlide(index, smooth = true) {
         currentIndex = index;
         const offset = -currentIndex * (cardsPerSlide * 18.5);
-        inner.style.transition = "transform 0.5s ease-in-out";
+        inner.style.transition = smooth ? "transform 0.5s ease-in-out" : "none";
         inner.style.transform = `translateX(${offset}em)`;
 
         // Update active dot
         document.querySelectorAll('.map button').forEach((btn, i) => {
-            btn.classList.toggle('activee', i === currentIndex);
+            btn.classList.toggle('activee', i === (index % totalSlides));
         });
     }
 
     function nextSlide() {
-        if (currentIndex < totalSlides - 1) {
+        if (currentIndex < totalSlides) {
             goToSlide(currentIndex + 1);
         } else {
-            // Smoothly reset to first slide
+            // Move to the cloned slide, then snap back to original
+            goToSlide(currentIndex + 1);
             setTimeout(() => {
-                inner.style.transition = "none"; // Remove transition for instant reset
-                goToSlide(0);
-                setTimeout(() => {
-                    inner.style.transition = "transform 0.5s ease-in-out"; // Restore transition
-                }, 50);
+                goToSlide(0, false); // Instantly reset to the first slide
             }, 500);
         }
     }
 
-    // Auto-advance slides every 5 seconds
     setInterval(nextSlide, 5000);
 });
