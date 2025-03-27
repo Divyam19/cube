@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.wrapper');
     const inner = document.querySelector('.inner');
     const cards = document.querySelectorAll('.cardd');
@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     wrapper.style.width = `${cardsPerSlide * 18.5}em`; // Adjusted for card width + gap
     inner.style.width = `${cards.length * 18.5}em`;
 
+    // Clear existing dots (if any)
+    map.innerHTML = '';
+
     // Create navigation dots
     for (let i = 0; i < totalSlides; i++) {
         const button = document.createElement('button');
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function goToSlide(index) {
         currentIndex = index;
         const offset = -currentIndex * (cardsPerSlide * 18.5);
+        inner.style.transition = "transform 0.5s ease-in-out";
         inner.style.transform = `translateX(${offset}em)`;
 
         // Update active dot
@@ -30,9 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            goToSlide(currentIndex + 1);
+        } else {
+            // Smoothly reset to first slide
+            setTimeout(() => {
+                inner.style.transition = "none"; // Remove transition for instant reset
+                goToSlide(0);
+                setTimeout(() => {
+                    inner.style.transition = "transform 0.5s ease-in-out"; // Restore transition
+                }, 50);
+            }, 500);
+        }
+    }
+
     // Auto-advance slides every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(currentIndex);
-    }, 5000);
+    setInterval(nextSlide, 5000);
 });
