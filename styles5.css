@@ -1,0 +1,815 @@
+.data {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.moving-number {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left;
+    font: system-ui;
+}
+
+.moving-data {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: 0.9;
+    text-align: left;
+    max-width: 280px;
+}
+
+.minus{
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.one-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2; /* Reduced line height */
+    margin-bottom: 30px;
+}
+
+.one {
+    font-size: 50px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Comparison Table Styles */
+.comparison-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'NewRailAlphabet', sans-serif;
+}
+
+.benefits-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #322D2D;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.product-headers {
+    display: flex;
+    /* margin-bottom: 20px; */
+    border-bottom: 1px solid #000000;
+    /* padding-bottom: 20px; */
+    padding-right: 14px;
+}
+
+.empty-cell {
+    width: 25%;
+}
+
+.product-cell {
+    width: 18.75%;
+    text-align: center;
+    padding: 5px;
+}
+
+.product-cell img {
+    height: 120px; /* Increased from 80px */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #322D2D;
+    margin-top: 10px;
+}
+
+.comparison-row {
+    display: flex;
+    border-bottom: 1px solid #4b4242;
+    /* padding: 5px 0; */
+}
+
+.feature-name {
+    width: 25%;
+    font-size: 16px;
+    color: #322D2D;
+    padding: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.feature-value {
+    width: 18.75%;
+    text-align: center;
+    font-size: 16px;
+    color: #322D2D;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+}
+
+.check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #6C8E4C;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.cross {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+/* Highlight the Alcami column */
+.product-cell:nth-child(2) {
+    background-color: #F0EEE6;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.comparison-row .feature-value:nth-child(2) {
+    background-color: #F0EEE6;
+    padding: 15px;
+}
+
+/* Make sure the highlighted column has consistent width */
+.product-headers .product-cell:nth-child(2),
+.comparison-row .feature-value:nth-child(2) {
+    width: 18.75%;
+    box-sizing: border-box;
+}
+
+.feature-value, .product-cell {
+        width: 17.5%;
+    
+}
+.founder-image {
+    width: calc(100% - 128px);
+    max-width: 1600px; /* Increased from default */
+    height: auto;
+    margin: 64px 64px;
+    display: block;
+}
+
+
+
+.aboutf{
+    font-size: 40px;
+    margin-left: 64px;
+}
+
+.fbutton{
+    margin-top: -20px;
+    margin-left: 64px;
+}
+
+.founder-text {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 64px;
+    align-items: flex-start;  /* Added this line */
+}
+
+.lorem {
+    font-size: 24px;
+    font-weight: 200;
+    text-align: left;
+    max-width: 50%;
+    margin-top: 0;  /* Changed from -4px to 0 */
+    margin-left: auto;
+}
+
+.feedback-cards {
+    width: 100%;
+    height: 612px;
+    background-color: #e8e5db;
+    margin-top: 150px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.say {
+    font-size: 40px;
+    font-weight: 200;
+    margin-left: 64px;
+    margin-top: 60px;
+    position: relative;
+}
+.people{
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 64px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.faq{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px;
+    margin-top: 100px;
+    gap: 64px;
+}
+
+.faq-left {
+    flex: 1;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.it {
+    font-size: 50px;
+    font-weight: 200;
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    cursor: pointer;
+}
+
+.faq-question span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #322D2D;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #322D2D;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle.active {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0 16px;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 16px;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.see-all-faqs {
+    margin-top: 32px;
+    text-align: right;
+}
+
+.see-all-faqs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #322D2D;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.see-all-faqs a img {
+    height: 12px;
+    width: 12px;
+}
+
+.data {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.moving-number {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left;
+    font: system-ui;
+}
+
+.moving-data {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: 0.9;
+    text-align: left;
+    max-width: 280px;
+}
+
+.minus{
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.one-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2; /* Reduced line height */
+    margin-bottom: 30px;
+}
+
+.one {
+    font-size: 50px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Comparison Table Styles */
+.comparison-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'NewRailAlphabet', sans-serif;
+}
+
+.benefits-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #322D2D;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.product-headers {
+    display: flex;
+    /* margin-bottom: 20px; */
+    border-bottom: 1px solid #000000;
+    /* padding-bottom: 20px; */
+    padding-right: 14px;
+}
+
+.empty-cell {
+    width: 25%;
+}
+
+.product-cell {
+    width: 18.75%;
+    text-align: center;
+    padding: 5px;
+}
+
+.product-cell img {
+    height: 120px; /* Increased from 80px */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #322D2D;
+    margin-top: 10px;
+}
+
+.comparison-row {
+    display: flex;
+    border-bottom: 1px solid #4b4242;
+    /* padding: 5px 0; */
+}
+
+.feature-name {
+    width: 25%;
+    font-size: 16px;
+    color: #322D2D;
+    padding: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.feature-value {
+    width: 18.75%;
+    text-align: center;
+    font-size: 16px;
+    color: #322D2D;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+}
+
+.check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #6C8E4C;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.cross {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+/* Highlight the Alcami column */
+.product-cell:nth-child(2) {
+    background-color: #F0EEE6;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.comparison-row .feature-value:nth-child(2) {
+    background-color: #F0EEE6;
+    padding: 15px;
+}
+
+/* Make sure the highlighted column has consistent width */
+.product-headers .product-cell:nth-child(2),
+.comparison-row .feature-value:nth-child(2) {
+    width: 18.75%;
+    box-sizing: border-box;
+}
+
+.feature-value, .product-cell {
+        width: 17.5%;
+    
+}
+.founder-image {
+    width: calc(100% - 128px);
+    max-width: 1600px; /* Increased from default */
+    height: auto;
+    margin: 64px 64px;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .founder-image {
+        width: calc(100% - 64px);
+        margin: 32px 32px;
+    }
+    
+    .moving-number {
+        font-size: 36px;
+    }
+    
+    .moving-data {
+        font-size: 16px;
+    }
+    
+    .one {
+        font-size: 40px;
+    }
+    
+    .comparison-container {
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+    
+    .benefits-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .product-cell img {
+        height: 80px;
+    }
+    
+    .product-name {
+        font-size: 14px;
+    }
+    
+    .feature-name, .feature-value {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .moving-number {
+        font-size: 30px;
+    }
+    
+    .moving-data {
+        font-size: 14px;
+        max-width: 240px;
+    }
+    
+    .one {
+        font-size: 32px;
+    }
+    
+    .comparison-container {
+        overflow-x: auto;
+    }
+    
+    .product-cell img {
+        height: 60px;
+    }
+    
+    .product-name {
+        font-size: 12px;
+    }
+    
+    .feature-name, .feature-value {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .check, .cross {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+.aboutf{
+    font-size: 40px;
+    margin-left: 64px;
+}
+
+.fbutton{
+    margin-top: -20px;
+    margin-left: 64px;
+}
+
+.founder-text {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 64px;
+    align-items: flex-start;  /* Added this line */
+}
+
+.lorem {
+    font-size: 24px;
+    font-weight: 200;
+    text-align: left;
+    max-width: 50%;
+    margin-top: 0;  /* Changed from -4px to 0 */
+    margin-left: auto;
+}
+
+.feedback-cards {
+    width: 100%;
+    height: 612px;
+    background-color: #e8e5db;
+    margin-top: 150px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.say {
+    font-size: 40px;
+    font-weight: 200;
+    margin-left: 64px;
+    margin-top: 60px;
+    position: relative;
+}
+.people{
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 64px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.faq{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px;
+    margin-top: 100px;
+    gap: 64px;
+}
+
+.faq-left {
+    flex: 1;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.it {
+    font-size: 50px;
+    font-weight: 200;
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    cursor: pointer;
+}
+
+.faq-question span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #322D2D;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #322D2D;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle.active {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0 16px;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 16px;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.see-all-faqs {
+    margin-top: 32px;
+    text-align: right;
+}
+
+.see-all-faqs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #322D2D;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.see-all-faqs a img {
+    height: 12px;
+    width: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .faq {
+        flex-direction: column;
+        padding: 32px 20px;
+        gap: 32px;
+    }
+    
+    .faq-left, .faq-right {
+        max-width: 100%;
+    }
+}
+
+.question{
+    font-size: 20px;
+    font-weight: 200;
+    display: block; /* Add this */
+    line-height: 1.2; /* Add this */
+    margin-bottom: 20px;
+}

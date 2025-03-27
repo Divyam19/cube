@@ -159,3 +159,362 @@
     /* opacity: 1; */
     /* border: 2px solid #BB9A3C; */
 }
+
+
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Tablets (portrait and landscape) */
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    /* Navbar responsive adjustments */
+    .nav-menu {
+      display: none;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    /* Layout adjustments */
+    .main-container {
+      flex-direction: column;
+    }
+    
+    .left-section, .right-section-content {
+      width: 100%;
+    }
+    
+    /* Stats display */
+    .stats-container {
+      justify-content: center;
+    }
+    
+    /* Box layout adjustment */
+    .box {
+      flex-direction: column;
+    }
+    
+    .left-box, .right-box {
+      width: 100%;
+    }
+    
+    /* Company logos */
+    .co-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .company {
+      width: 120px;
+    }
+    
+    /* Product display */
+    .flexbox {
+      flex-direction: column;
+    }
+    
+    .left-flex, .right-flex {
+      width: 100%;
+    }
+    
+    /* Flavor options */
+    .flavor-cards {
+      flex-wrap: wrap;
+    }
+    
+    /* Shilajit section */
+    .shil-box {
+      flex-direction: column;
+    }
+    
+    /* Feedback carousel adjustment */
+    .center .inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      overflow-x: auto;
+      margin: 0 auto; /* Changed from margin-left: 20px */
+      justify-content: center;
+      padding: 0 64px; /* Added padding for consistent spacing */
+    }
+    
+    .cardd {
+      min-width: 250px;
+      max-width: 250px;
+      margin: 0 10px; /* Changed from separate left/right margins */
+      height: 270px;
+    }
+    
+    /* Footer layout */
+    .footer-content {
+      flex-direction: column;
+    }
+    
+    .footer-left, .footer-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Mobile phones */
+  @media only screen and (max-width: 480px) {
+    /* Navbar responsive adjustments */
+    .nav-menu {
+      display: none;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    .right-section {
+      display: none;
+    }
+    
+    .top-banner {
+      font-size: 10px;
+      padding: 5px;
+    }
+    
+    /* Layout adjustments */
+    .main-container, .box, .flexbox {
+      flex-direction: column;
+    }
+    
+    .left-section, .right-section-content, .left-box, .right-box, .left-flex, .right-flex {
+      width: 100%;
+    }
+    
+    /* Text sizing */
+    .hero-title {
+      font-size: 28px;
+      margin: 15px 0;
+    }
+    
+    .quote {
+      font-size: 18px;
+      padding: 10px;
+    }
+    
+    /* Stats display */
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .stat-item {
+      margin-bottom: 15px;
+    }
+    
+    /* Card display */
+    .line {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .card {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+    
+    /* Company logos */
+    .co-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .company {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    
+    /* Product images */
+    .timg-container {
+      height: auto;
+    }
+    
+    .page1 {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .gimg {
+      width: 70px;
+      height: 70px;
+      margin: 5px;
+    }
+    
+    /* Flavor options */
+    .flavor-cards {
+      flex-direction: column;
+    }
+    
+    .flavor-option {
+      margin-bottom: 15px;
+    }
+    
+    /* Subscription options */
+    .subscription-option {
+      margin-bottom: 15px;
+    }
+    
+    /* Promises section */
+    .promice {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .promice img {
+      width: 80px;
+      margin: 10px;
+    }
+    
+    /* Shilajit section */
+    .shil-box {
+      flex-direction: column;
+    }
+    
+    .shilajit-img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .shil-cards {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    /* Mushroom stats */
+    .perc {
+      flex-direction: column;
+    }
+    
+    .data {
+      margin-bottom: 15px;
+    }
+    
+    /* Comparison table */
+    .comparison-table {
+      font-size: 12px;
+      overflow-x: scroll;
+    }
+    
+    .tab-img {
+      width: 40px;
+    }
+    
+    /* Feedback carousel adjustment */
+    .center .inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      margin: 0 auto; /* Changed from margin-left: 10px */
+      justify-content: center;
+      padding: 0 20px; /* Added padding for consistent spacing */
+    }
+    
+    .cardd {
+      min-width: 200px;
+      max-width: 200px;
+      margin: 0 5px; /* Changed from separate left/right margins */
+      height: 230px;
+      scroll-snap-align: start;
+    }
+    
+    /* FAQ section */
+    .faq {
+      flex-direction: column;
+    }
+    
+    .faq-left, .faq-right {
+      width: 100%;
+    }
+    
+    .accordion label {
+      font-size: 14px;
+      padding: 10px;
+    }
+    
+    /* Email signup */
+    .mug-firsttext {
+      font-size: 20px;
+    }
+    
+    .mug-subtext {
+      font-size: 14px;
+    }
+    
+    .glow-input {
+      width: 90%;
+    }
+    
+    /* Footer layout */
+    .footer-content {
+      flex-direction: column;
+    }
+    
+    .footer-left, .footer-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+    }
+    
+    .footer-column {
+      margin-bottom: 15px;
+    }
+    
+    .copyright {
+      font-size: 10px;
+    }
+  }
+  

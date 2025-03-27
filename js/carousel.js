@@ -4,8 +4,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.cardd');
     const map = document.querySelector('.map');
     let currentIndex = 0;
-    const cardsPerSlide = 3;
-    const totalSlides = Math.ceil(cards.length / cardsPerSlide);
+    let cardsPerSlide = 3; // Default for desktop
+    
+    // Determine cards per slide based on screen width
+    function updateCardsPerSlide() {
+        if (window.innerWidth <= 480) {
+            cardsPerSlide = 1;
+        } else if (window.innerWidth <= 768) {
+            cardsPerSlide = 2;
+        } else {
+            cardsPerSlide = 3;
+        }
+        return Math.ceil(cards.length / cardsPerSlide);
+    }
+    
+    let totalSlides = updateCardsPerSlide();
 
     // Create navigation buttons
     const prevButton = document.createElement('button');

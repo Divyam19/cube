@@ -99,6 +99,10 @@ body {
     margin-top: 30px;
 }
 
+/* Mobile Responsive Styles */
+
+
+
 .mug-text{
     position: absolute; 
     top: 40%; 
@@ -362,3 +366,401 @@ footer {
     margin-bottom: 10px;
 }
 
+/* Responsive Styles */
+
+/* Base styles for all devices */
+body {
+    overflow-x: hidden;
+}
+
+/* Tablet Styles (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Navigation */
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    /* Hero section */
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .left-section, .right-section-content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .right-section-content img {
+        max-width: 80%;
+        margin: 20px auto;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+    
+    .stats-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Second section */
+    .box {
+        flex-direction: column;
+    }
+    
+    .left-box, .right-box {
+        width: 100%;
+    }
+    
+    .iimg {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    /* Guarantee section */
+    .line {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card {
+        width: 45%;
+        margin: 10px;
+    }
+    
+    /* Company section */
+    .co-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .company {
+        width: 30%;
+        margin: 10px;
+    }
+    
+    /* Product section */
+    .flexbox {
+        flex-direction: column;
+    }
+    
+    .left-flex, .right-flex {
+        width: 100%;
+    }
+    
+    .flavor-cards {
+        flex-wrap: wrap;
+    }
+    
+    .flavor-option {
+        width: 45%;
+    }
+    
+    /* Subscription section */
+    .subscription-container {
+        width: 100%;
+    }
+    
+    .included-items-2 {
+        flex-direction: column;
+    }
+    
+    /* Comparison table */
+    .comparison-table {
+        overflow-x: auto;
+    }
+    
+    /* FAQ section */
+    .faq {
+        flex-direction: column;
+    }
+    
+    .faq-left, .faq-right {
+        width: 100%;
+    }
+    
+    /* Newsletter section */
+    .coffee-mug {
+        position: relative;
+        height: 600px !important;
+    }
+
+    .mug-text {
+        /* position: absolute; */
+        background-color: rgba(118, 118, 118, 0.5); /* Adjust the last value (0.5) for transparency */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        color: white;
+        width: 90%;
+        border-radius: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .mug-firsttext {
+        font-size: 36px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    
+    .mm {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+    
+    .footer-links {
+        gap: 40px;
+    }
+    
+    .subi {
+        flex-direction: column;
+    }
+    
+    .normal-input {
+        width: 100%;
+    }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+    /* Navigation */
+    .right-section {
+        display: none;
+    }
+    
+    .top-banner {
+        font-size: 12px;
+        padding: 5px;
+    }
+    
+    /* Hero section */
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .stat-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    /* Bottom quote */
+    .quote {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    /* Guarantee cards */
+    .card {
+        width: 100%;
+    }
+    
+    /* Company logos */
+    .company {
+        width: 45%;
+    }
+    
+    /* Product images */
+    .page1 {
+        flex-wrap: wrap;
+    }
+    
+    .gimg {
+        width: 45%;
+        margin: 5px;
+    }
+    
+    /* Flavor options */
+    .flavor-option {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Subscription options */
+    .subscription-option {
+        padding: 10px;
+    }
+    
+    .benefits li {
+        font-size: 14px;
+    }
+    
+    /* Promises section */
+    .promice {
+        flex-wrap: wrap;
+    }
+    
+    .promice img {
+        width: 30%;
+        margin: 10px;
+    }
+    
+    /* Shilajit section */
+    .shil-box {
+        flex-direction: column;
+    }
+    
+    .shilajit-img {
+        width: 100%;
+    }
+    
+    .shil-cards {
+        flex-wrap: wrap;
+    }
+    
+    /* Mushroom section */
+    .mushroom-section {
+        flex-direction: column;
+    }
+    
+    .mushrooms {
+        width: 100%;
+    }
+    
+    .perc {
+        width: 100%;
+    }
+    
+    .data {
+        margin: 20px 0;
+    }
+    
+    /* Comparison table */
+    .product-cell {
+        min-width: 120px;
+    }
+    
+    /* Feedback cards */
+    .wrapper {
+        padding: 0 10px;
+    }
+    
+    .cardd {
+        width: 100%;
+    }
+    
+    /* FAQ accordion */
+    .accordion label {
+        font-size: 16px;
+    }
+    
+    .accordion .content {
+        font-size: 14px;
+    }
+    
+    /* Newsletter section */
+    .coffee-mug {
+        height: 500px !important;
+    }
+
+    .mug-text {
+        top: 50%;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .mug-firsttext {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .mug-subtext {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .glow-input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .copyright {
+        font-size: 14px;
+        margin-left: 0;
+    }
+}
+
+/* Additional fixes for very small screens */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+    
+    .logo img {
+        max-width: 120px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .try-button, .try-shil, .white-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    .elements, .ing {
+        font-size: 20px;
+    }
+    
+    .bng {
+        font-size: 16px;
+    }
+    
+    .company {
+        width: 80%;
+    }
+    
+    .subscription-header h3 {
+        font-size: 18px;
+    }
+    
+    .price {
+        font-size: 16px;
+    }
+    
+    .mug-firsttext {
+        font-size: 20px;
+    }
+    
+    .coffee-mug {
+        height: 500px !important;
+    }
+}
+
+/* Animation optimizations for mobile */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
