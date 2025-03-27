@@ -7,6 +7,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardsPerSlide = 3;
     const totalSlides = Math.ceil(cards.length / cardsPerSlide);
 
+    // Create navigation buttons
+    const prevButton = document.createElement('button');
+    prevButton.className = 'carousel-nav-button prev';
+    prevButton.innerHTML = '❮';
+    const nextButton = document.createElement('button');
+    nextButton.className = 'carousel-nav-button next';
+    nextButton.innerHTML = '❯';
+
+    // Add buttons to carousel container
+    const carouselContainer = wrapper.parentElement;
+    carouselContainer.appendChild(prevButton);
+    carouselContainer.appendChild(nextButton);
+
     // Clone the first few cards for smooth looping
     const cloneCards = [...cards].slice(0, cardsPerSlide).map(card => card.cloneNode(true));
     cloneCards.forEach(card => inner.appendChild(card));
@@ -47,6 +60,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 500);
         }
     }
+
+    // Add click event listeners to navigation buttons
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        } else {
+            // Loop to the last slide
+            goToSlide(totalSlides - 1);
+        }
+    });
+
+    nextButton.addEventListener('click', nextSlide);
 
     setInterval(nextSlide, 5000);
 });

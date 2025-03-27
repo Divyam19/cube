@@ -78,3 +78,38 @@
 .map > button:nth-child(n+4) {
     display: none;
 }
+
+.carousel-nav-button {
+    position: absolute;
+    top: 0;
+    background: rgba(10, 38, 64, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+    margin-right: 64px;
+    margin-top: 95px;
+}
+
+.carousel-nav-button:hover {
+    background: rgba(10, 38, 64, 1);
+}
+
+.carousel-nav-button.prev {
+    right: 60px;
+}
+
+.carousel-nav-button.next {
+    right: 10px;
+}
+
+.carousel-container {
+    position: relative;
+}
