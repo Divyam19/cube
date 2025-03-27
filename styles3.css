@@ -122,19 +122,22 @@ h3 {
 }
 
 .add-to-cart {
-    width: 100%;
-    padding: 15px;
-    background-color: #6B8E23;
-    color: white;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  background-color:#667744;
+  
+  color: white;
+  /* border: none; */
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
 }
 
 .add-to-cart:hover {
-    background-color: #5A7A1E;
+    background-color: #667744;
+    
 }
 
 .promice {
@@ -203,10 +206,11 @@ font-weight: 700;
 .add-to-cart {
 width: 100%;
 padding: 16px;
-background-color: #6C8E4C;
+background-color: #667744;
+;
 color: white;
 border: none;
-border-radius: 0 0 12px 12px;
+/* border-radius: 0 0 12px 12px; */
 font-size: 18px;
 font-weight: 600;
 cursor: pointer;

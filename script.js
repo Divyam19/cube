@@ -137,13 +137,13 @@ function subscribe2() {
 // Image slider functionality
 const productImages = [
     '/assets/photos/1.png',
-    '/assets/photos/2_1_11zon.png',
-    '/assets/photos/3_2_11zon.png',
-    '/assets/photos/4_3_11zon.png',
-    '/assets/photos/5_4_11zon.png',
-    '/assets/photos/7_5_11zon.png',
-    '/assets/photos/8_6_11zon.png',
-    '/assets/photos/9_7_11zon.png',
+    '/assets/11zon_resized/2_1_11zon.png',
+    '/assets/11zon_resized/3_2_11zon.png',
+    '/assets/11zon_resized/4_3_11zon.png',
+    '/assets/11zon_resized/5_4_11zon.png',
+    '/assets/11zon_resized/7_5_11zon.png',
+    '/assets/11zon_resized/8_6_11zon.png',
+    '/assets/11zon_resized/9_7_11zon.png',
 ];
 
 let currentImageIndex = 0;
@@ -212,56 +212,4 @@ buttonsWrapper.addEventListener("click", e => {
       e.target.classList.add('activee');
     }
   }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  const dropdowns = document.querySelectorAll('.dropdown > a');
-
-  // Toggle hamburger menu
-  hamburger.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
-  });
-
-  // Close menu when a link is clicked
-  navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-          navMenu.classList.remove('active');
-          hamburger.classList.remove('active');
-      });
-  });
-
-  // Handle dropdown toggles
-  dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', function(e) {
-          e.preventDefault(); // Prevent default link behavior
-          
-          // Toggle the active class on the parent dropdown
-          const parentDropdown = this.closest('.dropdown');
-          parentDropdown.classList.toggle('active');
-          
-          // Close other open dropdowns
-          document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
-              if (otherDropdown !== parentDropdown) {
-                  otherDropdown.classList.remove('active');
-              }
-          });
-      });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', function(e) {
-      if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-          navMenu.classList.remove('active');
-          hamburger.classList.remove('active');
-          
-          // Close all dropdowns
-          document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-              dropdown.classList.remove('active');
-          });
-      }
-  });
 });
