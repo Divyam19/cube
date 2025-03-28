@@ -356,12 +356,12 @@
 
 .slider-nav.prev {
   left: 15%;
-  background-image: url('./assets/slider/left-slider.png');
+  background-image: url('../assets/slider/left-slider.png');
 }
 
 .slider-nav.next {
   right: 15%;
-  background-image: url('./assets/slider/right-slider.png');
+  background-image: url('../assets/slider/right-slider.png');
 }
 
 .kk {
@@ -560,12 +560,12 @@
 
 .slider-nav.prev {
   left: 15%;
-  background-image: url('./assets/slider/left-slider.png');
+  background-image: url('../assets/slider/left-slider.png');
 }
 
 .slider-nav.next {
   right: 15%;
-  background-image: url('./assets/slider/right-slider.png');
+  background-image: url('../assets/slider/right-slider.png');
 }
 
 .kk {
