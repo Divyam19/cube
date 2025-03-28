@@ -44,14 +44,11 @@ function animateValue(element, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// Intersection Observer to trigger animation when element is in view
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const element = entry.target;
             const targetValue = parseInt(element.getAttribute('data-target'));
-            
-            // Only animate if not already animated
             if (!element.classList.contains('animated')) {
                 animateValue(element, 0, targetValue, 2000);
                 element.classList.add('animated');
@@ -59,21 +56,15 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1 // Trigger when at least 10% of the element is visible
+    threshold: 0.1
 });
 
-// Ensure DOM is fully loaded before observing elements
 document.addEventListener('DOMContentLoaded', () => {
-    // Observe all moving-number elements
     document.querySelectorAll('.moving-number').forEach(element => {
         observer.observe(element);
     });
-    
-    console.log('Moving number observers initialized');
 });
 
-
-// FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', function() {
   const faqItems = document.querySelectorAll('.faq-item');
   
@@ -83,13 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const answer = item.querySelector('.faq-answer');
     
     question.addEventListener('click', function() {
-      // Toggle active class on the answer
       answer.classList.toggle('active');
-      
-      // Toggle active class on the toggle button (for rotation)
       toggle.classList.toggle('active');
       
-      // Close other open FAQ items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.querySelector('.faq-answer').classList.remove('active');
@@ -98,11 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Make the toggle button also trigger the click event
     toggle.addEventListener('click', function(e) {
-      // Prevent the event from bubbling up to the question div
       e.stopPropagation();
-      // Manually trigger the click on the parent question div
       question.click();
     });
   });
@@ -117,7 +101,7 @@ function subscribe() {
       return;
   }
 
-  inputField.value = ""; // Clear input
+  inputField.value = "";
   alert("Email registered!");
 }
 
@@ -130,11 +114,10 @@ function subscribe2() {
       return;
   }
 
-  inputField.value = ""; // Clear input
+  inputField.value = "";
   alert("Email registered!");
 }
 
-// Image slider functionality
 const productImages = [
     '/assets/photos/1.png',
     '/assets/11zon_resized/2_1_11zon.png',
@@ -155,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.slider-dots');
 
     if (productImage && prevButton && nextButton && dotsContainer) {
-        // Create pagination dots
         productImages.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
@@ -192,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Original map slider code
 const buttonsWrapper = document.querySelector(".map");
 const slides = document.querySelector(".inner");
 
@@ -214,86 +195,73 @@ buttonsWrapper.addEventListener("click", e => {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const flavorOptions = document.querySelectorAll('input[name="flavor"]');
     const subscriptionOptions = document.querySelectorAll('input[name="subscription"]');
     const addToCartBtn = document.getElementById('addToCartBtn');
     const urlTooltip = document.getElementById('urlTooltip');
 
-    // Initialize default selections
-document.addEventListener('DOMContentLoaded', function() {
-    // Set default flavor to Original
-    const defaultFlavor = document.getElementById('original');
-    if (defaultFlavor) defaultFlavor.checked = true;
+    document.addEventListener('DOMContentLoaded', function() {
+        const defaultFlavor = document.getElementById('original');
+        if (defaultFlavor) defaultFlavor.checked = true;
+        generateCartUrl();
+    });
 
-    // Set default subscription to single-kit (already set in HTML)
-    generateCartUrl(); // Generate initial URL
-});
+    function generateCartUrl() {
+        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+        const selectedSubscription = document.querySelector('input[name="subscription"]:checked');
+        const addToCartBtn = document.getElementById('addToCartBtn');
 
-function generateCartUrl() {
-    const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
-    const selectedSubscription = document.querySelector('input[name="subscription"]:checked');
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    const urlTooltip = document.getElementById('urlTooltip');
+        if (selectedFlavor && selectedSubscription && addToCartBtn) {
+            const flavor = selectedFlavor.value;
+            const subscription = selectedSubscription.value;
 
-    if (selectedFlavor && selectedSubscription) {
-        const flavor = selectedFlavor.value;
-        const subscription = selectedSubscription.value;
+            const baseUrl = 'https://shop.example.com/cart';
 
-        // Map flavor to a number (1-3)
-        let flavorNum = 0;
-        if (flavor === 'original') flavorNum = 1;
-        else if (flavor === 'Matcha') flavorNum = 2;
-        else if (flavor === 'cocoa') flavorNum = 3;
+            const flavorIds = {
+                'original': 'org',
+                'Matcha': 'mat',
+                'cocoa': 'coc'
+            };
 
-        // Map subscription to a number (1-3)
-        let subscriptionNum = 0;
-        if (subscription === 'single-kit') subscriptionNum = 1;
-        else if (subscription === 'double-kit') subscriptionNum = 2;
-        else if (subscription === 'try-once') subscriptionNum = 3;
+            const subscriptionCodes = {
+                'single-kit': 'single',
+                'double-kit': 'double',
+                'try-once': 'once'
+            };
 
-        // Calculate the URL number (1-9) based on the combination
-        // Using the formula: (flavor-1)*3 + subscription
-        const urlNum = (flavorNum - 1) * 3 + subscriptionNum;
-
-        // Generate URL based on selected options
-        const cartUrl = `abc/${urlNum}`;
-        
-        // Update the button's href attribute
-        addToCartBtn.href = cartUrl;
-        
-        // Show the URL in the tooltip for debugging
-        if (urlTooltip) {
-            urlTooltip.textContent = cartUrl;
-            urlTooltip.style.display = 'block';
+            const cartUrl = `${baseUrl}?product=${flavorIds[flavor]}&plan=${subscriptionCodes[subscription]}&ref=direct`;
+            
+            addToCartBtn.href = cartUrl;
+            addToCartBtn.textContent = `Add ${flavor} (${subscription}) to Cart →`;
+            addToCartBtn.target = '_blank';
+            addToCartBtn.rel = 'noopener noreferrer';
+            addToCartBtn.title = cartUrl;
         }
-        
-        // Update button text to show selected options
-        addToCartBtn.textContent = `Add ${flavor} (${subscription}) to Cart →`;
     }
-}
 
-// Add event listeners to radio buttons
-document.querySelectorAll('input[name="flavor"], input[name="subscription"]').forEach(radio => {
-    radio.addEventListener('change', generateCartUrl);
-});
+    document.querySelectorAll('input[name="flavor"], input[name="subscription"]').forEach(radio => {
+        radio.addEventListener('change', generateCartUrl);
+    });
 
-// Add click event to the Add to Cart button
-document.addEventListener('DOMContentLoaded', function() {
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (this.href) {
-                window.location.href = this.href;
-            }
-        });
-    }
-});
+    generateCartUrl();
 
+    document.querySelectorAll('input[name="flavor"], input[name="subscription"]').forEach(radio => {
+        radio.addEventListener('change', generateCartUrl);
+    });
 
-    // Add event listeners to both flavor and subscription options
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        if (addToCartBtn) {
+            addToCartBtn.removeEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.href) {
+                    window.location.href = this.href;
+                }
+            });
+        }
+    });
+
     [...flavorOptions, ...subscriptionOptions].forEach(option => {
         option.addEventListener('change', generateCartUrl);
     });

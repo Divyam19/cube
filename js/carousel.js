@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.cardd');
     const map = document.querySelector('.map');
     let currentIndex = 0;
-    let cardsPerSlide = 3; // Default for desktop
+    let cardsPerSlide = 3;
     
-    // Determine cards per slide based on screen width
     function updateCardsPerSlide() {
         if (window.innerWidth <= 480) {
             cardsPerSlide = 1;
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let totalSlides = updateCardsPerSlide();
 
-    // Create navigation buttons
     const prevButton = document.createElement('button');
     prevButton.className = 'carousel-nav-button prev';
     prevButton.innerHTML = '❮';
@@ -28,20 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButton.className = 'carousel-nav-button next';
     nextButton.innerHTML = '❯';
 
-    // Add buttons to carousel container
     const carouselContainer = wrapper.parentElement;
     carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
 
-    // Clone the first few cards for smooth looping
     const cloneCards = [...cards].slice(0, cardsPerSlide).map(card => card.cloneNode(true));
     cloneCards.forEach(card => inner.appendChild(card));
 
-    // Adjust container widths
     wrapper.style.width = `${cardsPerSlide * 18.5}em`;
     inner.style.width = `${(cards.length + cloneCards.length) * 18.5}em`;
 
-    // Create navigation dots
     map.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
         const button = document.createElement('button');
@@ -56,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         inner.style.transition = smooth ? "transform 0.5s ease-in-out" : "none";
         inner.style.transform = `translateX(${offset}em)`;
 
-        // Update active dot
         document.querySelectorAll('.map button').forEach((btn, i) => {
             btn.classList.toggle('activee', i === (index % totalSlides));
         });
@@ -66,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentIndex < totalSlides) {
             goToSlide(currentIndex + 1);
         } else {
-            // Move to the cloned slide, then snap back to original
             goToSlide(currentIndex + 1);
             setTimeout(() => {
                 goToSlide(0, false); // Instantly reset to the first slide
@@ -74,12 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Add click event listeners to navigation buttons
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             goToSlide(currentIndex - 1);
         } else {
-            // Loop to the last slide
             goToSlide(totalSlides - 1);
         }
     });

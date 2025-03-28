@@ -91,7 +91,7 @@ h3 {
 
 .included-items-2 img {
     max-width: 200px;
-    height: 180px; /* Fixed height for both images */
+    height: 180px;
     object-fit: contain;
     margin: 15px 0;
 }
@@ -127,7 +127,7 @@ h3 {
   background-color:#667744;
   
   color: white;
-  /* border: none; */
+  
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
@@ -210,7 +210,7 @@ background-color: #667744;
 ;
 color: white;
 border: none;
-/* border-radius: 0 0 12px 12px; */
+
 font-size: 18px;
 font-weight: 600;
 cursor: pointer;
@@ -235,7 +235,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 gap: 48px;
-max-width: 1400px; /* Increased from 1200px */
+max-width: 1400px;
 margin: 48px auto;
 padding: 0 32px;
 }
@@ -254,13 +254,13 @@ border-radius: 12px;
 .shil-cards {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
-gap: 32px; /* Increased gap */
+gap: 32px;
 padding: 20px;
 }
 
 .shil-cards img {
 width: 100%;
-min-width: 300px; /* Set minimum width */
+min-width: 300px;
 height: auto;
 transition: transform 0.3s ease;
 }
@@ -298,7 +298,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
-margin: 10px ; /* Ensures horizontal centering */
+margin: 10px;
 }
 
 .try-shil img {
@@ -328,7 +328,7 @@ padding: 80px 120px;
 background-color: #F5F5F5;
 }
 
-/* Base styles to prevent horizontal scrolling */
+
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -343,9 +343,9 @@ html, body {
     box-sizing: inherit;
   }
   
-  /* Mobile styles for responsive design */
+  
   @media (max-width: 768px) {
-    /* Navbar adjustments */
+    
     .navbar {
       padding: 0;
     }
@@ -370,7 +370,7 @@ html, body {
       margin-left: 16px;
     }
     
-    /* Main container adjustments */
+    
     .main-container {
       flex-direction: column;
       padding: 16px;
@@ -397,7 +397,7 @@ html, body {
       margin-bottom: 16px;
     }
     
-    /* Bottom section */
+    
     .bottom-section {
       padding: 16px;
     }
@@ -406,7 +406,7 @@ html, body {
       font-size: 18px;
     }
     
-    /* Second section */
+    
     .box {
       flex-direction: column;
       padding: 16px;
@@ -427,7 +427,7 @@ html, body {
       height: auto;
     }
     
-    /* Guarantee section */
+    
     .line {
       flex-direction: column;
       padding: 16px;
@@ -438,7 +438,7 @@ html, body {
       margin-bottom: 16px;
     }
     
-    /* Company section */
+    
     .companies {
       padding: 16px;
     }
@@ -453,7 +453,7 @@ html, body {
       width: 30%;
     }
     
-    /* Product section */
+    
     .flexbox {
       flex-direction: column;
       padding: 16px;
@@ -478,7 +478,7 @@ html, body {
       width: 22%;
     }
     
-    /* Flavor options */
+    
     .flavor-cards {
       flex-direction: column;
       gap: 16px;
@@ -488,7 +488,7 @@ html, body {
       width: 100%;
     }
     
-    /* Subscription section */
+    
     .subscription-container {
       width: 100%;
       max-width: 100%;
@@ -505,7 +505,7 @@ html, body {
       max-width: 100%;
     }
     
-    /* Promise section */
+    
     .promice {
       flex-wrap: wrap;
       justify-content: center;
@@ -517,7 +517,7 @@ html, body {
       height: auto;
     }
     
-    /* Shilajit section */
+    
     .shilajit {
       margin: 32px 0;
     }
@@ -546,12 +546,12 @@ html, body {
       min-width: unset;
     }
     
-    /* Focus section */
+    
     .focuss {
       margin: 32px 16px;
     }
     
-    /* Mushroom section */
+    
     .mushroom-section {
       flex-direction: column;
       padding: 16px;
@@ -571,17 +571,17 @@ html, body {
       margin-bottom: 16px;
     }
     
-    /* Comparison table */
+    
     .comparison-container {
       padding: 16px;
       overflow-x: auto;
     }
     
     .comparison-table {
-      min-width: 600px; /* Allow horizontal scrolling for table */
+      min-width: 600px;
     }
     
-    /* Founder section */
+    
     .founder-image {
       width: 100%;
       height: auto;
@@ -592,7 +592,7 @@ html, body {
       padding: 16px;
     }
     
-    /* Feedback cards */
+    
     .feedback-cards {
       padding: 16px;
     }
@@ -609,7 +609,7 @@ html, body {
       gap: 16px;
     }
     
-    /* FAQ section */
+    
     .faq {
       flex-direction: column;
       padding: 16px;
@@ -624,7 +624,7 @@ html, body {
       font-size: 14px;
     }
     
-    /* Email section */
+    
     .coffee-mug {
       height: auto !important;
     }
@@ -645,7 +645,7 @@ html, body {
       width: 100%;
     }
     
-    /* Footer */
+    
     .footer-content {
       flex-direction: column;
       padding: 16px;
@@ -677,7 +677,7 @@ html, body {
     }
   }
   
-  /* Tablet adjustments */
+  
   @media (min-width: 769px) and (max-width: 1024px) {
     .main-container, .box, .flexbox, .shil-box {
       padding: 24px;
