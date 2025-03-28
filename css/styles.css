@@ -12,6 +12,33 @@
   padding: 0 100px; /* Adds equal spacing on both sides */
 }
 
+.add-to-cart {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.url-tooltip {
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
 
 
 

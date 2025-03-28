@@ -221,34 +221,77 @@ document.addEventListener('DOMContentLoaded', function() {
     const addToCartBtn = document.getElementById('addToCartBtn');
     const urlTooltip = document.getElementById('urlTooltip');
 
-    function generateCartUrl() {
-        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
-        const selectedSubscription = document.querySelector('input[name="subscription"]:checked');
+    // Initialize default selections
+document.addEventListener('DOMContentLoaded', function() {
+    // Set default flavor to Original
+    const defaultFlavor = document.getElementById('original');
+    if (defaultFlavor) defaultFlavor.checked = true;
 
-        if (selectedFlavor && selectedSubscription) {
-            const flavor = selectedFlavor.value;
-            const subscription = selectedSubscription.value;
+    // Set default subscription to single-kit (already set in HTML)
+    generateCartUrl(); // Generate initial URL
+});
 
-            // Generate URL based on selected options
-            const baseUrl = 'https://alcami.com/cart';
-            const urlParams = new URLSearchParams({
-                flavor: flavor,
-                type: subscription
-            });
+function generateCartUrl() {
+    const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+    const selectedSubscription = document.querySelector('input[name="subscription"]:checked');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const urlTooltip = document.getElementById('urlTooltip');
 
-            const cartUrl = `${baseUrl}?${urlParams.toString()}`;
-            
-            addToCartBtn.onclick = function() {
-                window.location.href = cartUrl;
-            };
+    if (selectedFlavor && selectedSubscription) {
+        const flavor = selectedFlavor.value;
+        const subscription = selectedSubscription.value;
 
-            // Update tooltip with the generated URL
+        // Map flavor to a number (1-3)
+        let flavorNum = 0;
+        if (flavor === 'original') flavorNum = 1;
+        else if (flavor === 'Matcha') flavorNum = 2;
+        else if (flavor === 'cocoa') flavorNum = 3;
+
+        // Map subscription to a number (1-3)
+        let subscriptionNum = 0;
+        if (subscription === 'single-kit') subscriptionNum = 1;
+        else if (subscription === 'double-kit') subscriptionNum = 2;
+        else if (subscription === 'try-once') subscriptionNum = 3;
+
+        // Calculate the URL number (1-9) based on the combination
+        // Using the formula: (flavor-1)*3 + subscription
+        const urlNum = (flavorNum - 1) * 3 + subscriptionNum;
+
+        // Generate URL based on selected options
+        const cartUrl = `abc/${urlNum}`;
+        
+        // Update the button's href attribute
+        addToCartBtn.href = cartUrl;
+        
+        // Show the URL in the tooltip for debugging
+        if (urlTooltip) {
             urlTooltip.textContent = cartUrl;
-
-            // Optional: Update button text to show selected options
-            addToCartBtn.childNodes[0].textContent = `Add ${flavor} (${subscription}) to Cart →`;
+            urlTooltip.style.display = 'block';
         }
+        
+        // Update button text to show selected options
+        addToCartBtn.textContent = `Add ${flavor} (${subscription}) to Cart →`;
     }
+}
+
+// Add event listeners to radio buttons
+document.querySelectorAll('input[name="flavor"], input[name="subscription"]').forEach(radio => {
+    radio.addEventListener('change', generateCartUrl);
+});
+
+// Add click event to the Add to Cart button
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (this.href) {
+                window.location.href = this.href;
+            }
+        });
+    }
+});
+
 
     // Add event listeners to both flavor and subscription options
     [...flavorOptions, ...subscriptionOptions].forEach(option => {
